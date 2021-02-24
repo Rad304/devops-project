@@ -10,7 +10,10 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: example-rancher-project:${CICD_EXECUTION_SEQUENCE}
+      tag: rad304/example-rancher-project:${CICD_EXECUTION_SEQUENCE}
+      # Optionally push to remote registry
+      pushRemote: true
+      registry: index.docker.io
 - name: Deploy
   steps:
   - applyYamlConfig:
