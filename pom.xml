@@ -46,7 +46,7 @@
         </configuration>
       </plugin>
 
-      <plugin>
+      <!--<plugin>
         <artifactId>maven-site-plugin</artifactId>
         <configuration>
           <reportPlugins>
@@ -81,7 +81,7 @@
             </plugin>
           </reportPlugins>
         </configuration>
-      </plugin>
+      </plugin>-->
     </plugins>
 
     <pluginManagement>
