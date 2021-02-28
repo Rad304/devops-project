@@ -2,6 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: rancher-project-service
+  namespace: production
 spec:
   selector:
     app: rancher-project
@@ -15,6 +16,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: example-rancher-project
+  namespace: production
   labels:
     app: rancher-project
 spec:
