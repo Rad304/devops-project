@@ -1,11 +1,11 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: rancher-project-service
-  namespace: production
+  name: rancher-project-staging-service
+  namespace: staging
 spec:
   selector:
-    app: rancher-project
+    app: rancher-project-staging
   type: NodePort
   ports:
     - protocol: TCP
@@ -15,19 +15,19 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: example-rancher-project
-  namespace: production
+  name: example-rancher-project-staging
+  namespace: staging
   labels:
-    app: rancher-project
+    app: rancher-project-staging
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: rancher-project
+      app: rancher-project-staging
   template:
     metadata:
       labels:
-        app: rancher-project
+        app: rancher-project-staging
     spec:
       imagePullSecrets:
       - name: pipeline-docker-registry
